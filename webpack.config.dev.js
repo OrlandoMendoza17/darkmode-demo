@@ -1,20 +1,27 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output:{
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash].js',
+    filename: '[name].js',
+    // publicPath: '/',
     assetModuleFilename: 'assets/images/[hash][ext][query]',
   },
   context: __dirname,
-  mode: 'production',
+  mode: 'development',
+  devtool: 'source-map',
+  devServer:{
+    contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true,
+    compress: true,
+    open: true,
+    port: 3006,
+  },
   resolve:{
     extensions: ['.js', '.jsx'],
     alias:{
@@ -25,13 +32,6 @@ module.exports = {
       "@components": path.resolve(__dirname, 'src/components'),
       "@store": path.resolve(__dirname, 'src/store'),
     }
-  },
-  optimization:{
-    minimize: true,
-    minimizer:[
-      new TerserPlugin(),
-      new CssMinimizerPlugin(),
-    ]
   },
   module:{
     rules:[
@@ -51,7 +51,8 @@ module.exports = {
       {
         test: /\.s?css$/i,
         use:[
-          MiniCssExtractPlugin.loader,
+          // MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
           'sass-loader',
         ]
@@ -89,9 +90,9 @@ module.exports = {
     ]
   },
   plugins:[
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css'
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: '[name].css'
+    // }),
     new CopyWebpackPlugin({
       patterns:[
         {
@@ -100,11 +101,11 @@ module.exports = {
         }
       ]
     }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns:[
-        path.resolve(__dirname, 'dist/**')
-      ]
-    }),
+    // new CleanWebpackPlugin({
+    //   cleanOnceBeforeBuildPatterns:[
+    //     path.resolve(__dirname, 'dist/**')
+    //   ]
+    // }),
     new HtmlWebpackPlugin({
       inject: 'body',
       template: path.resolve(__dirname, 'public/index.html'),
