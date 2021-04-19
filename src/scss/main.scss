@@ -63,7 +63,7 @@
       margin-left: 20px;
       position: relative;
       cursor: pointer;
-      transition: .3s;
+      // transition: .3s;
       padding: 5px;
       width: 80px;
       height: 40px;
@@ -74,7 +74,7 @@
         position: absolute;
         top: calc(0% + 5px);
         left: calc(100% - 35px);
-        transition: .3s;
+        transition: .3s left;
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -129,6 +129,7 @@
 .SocialMedia{
   position: relative;
   // max-width: 300px;
+  overflow: hidden;
   text-align: center;
   padding: 30px;
   background-color: $item-color;
@@ -146,8 +147,6 @@
     right: 0;
     height: 5px;
     background: $secondary-font-color;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
   }  
   &.facebook::before{
     background-color: $facebok-color;
@@ -182,6 +181,7 @@
     align-content: center;
     
     &--count{
+      color: $primary-font-color;
       font-weight: bold;
       font-size: 5rem;
     }
@@ -253,6 +253,7 @@
     font-weight: bold;
 
     &--count{
+      color: $primary-font-color;
       font-size: 4rem;
     }
     &--rage{
@@ -271,4 +272,8 @@
       color: $danger-font-color;
     }
   }
+}
+
+@media (prefers-color-scheme: dark){
+  
 }

@@ -11,3 +11,19 @@ import './scss/App.scss';
 //   </Provider>, 
 //   document.getElementById('container')
 // );
+
+const darkmode = document.getElementById('darkmode')
+
+if(matchMedia('(prefers-color-scheme: dark)').matches){
+  darkmode.setAttribute('checked', true)
+}else{
+  // darkmode.setAttribute('checked', true)
+}
+
+darkmode.addEventListener('change', ()=>{
+  if(darkmode.checked){
+    document.body.classList.add('darkmode')    
+  }else{
+    document.body.classList.remove('darkmode')    
+  }
+})
