@@ -12,6 +12,11 @@ body.darkmode{
       }
     }
   }
+  .SocialMediaBoard-header{
+    .DarkMode{
+      color: $primary-darkmode-font-color;
+    }
+  }
   
   .MainSection,
   .TodaysOverview{

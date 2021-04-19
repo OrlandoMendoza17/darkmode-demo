@@ -13,7 +13,7 @@
       "account": "@nathanf",
       "accountType": "instagram",
       "followers": 28000,
-      "newFollowers": 12,
+      "newFollowers": 20,
       "increasement": true
     },
     {
@@ -21,7 +21,7 @@
       "account": "@nathanf",
       "accountType": "twitter",
       "followers": 6000,
-      "newFollowers": 12,
+      "newFollowers": 30,
       "increasement": true
     },
     {
@@ -29,7 +29,7 @@
       "account": "@nathanf",
       "accountType": "youtube",
       "followers": 12000,
-      "newFollowers": 12,
+      "newFollowers": 175,
       "increasement": true
     }
   ],
