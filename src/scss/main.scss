@@ -1,0 +1,274 @@
+.SocialMediaBoard-header{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  
+  @media screen and (min-width: 576px){
+    padding: 20px;
+  }
+  
+  @media screen and (min-width: 1024px){
+    flex-direction: row;
+    justify-content: space-between;
+    hr{
+      display: none;
+    }
+  }
+  
+  &__main{
+    &--title{
+      padding: 10px;
+      color: $primary-font-color;
+      font-size: 2.72rem;
+      font-weight: bold;
+    }
+    
+    &--followers{
+      padding: 10px;
+      padding-top: 0;
+      padding-bottom: 20px;
+      color: $secondary-font-color;
+      font-weight: 600;
+    }
+  }
+  
+  
+  .DarkMode{
+    padding: 20px 10px;
+    color: $secondary-font-color;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    
+    @media screen and (min-width: 576px){
+      padding: 20px;
+    }
+    @media screen and (min-width: 768px){
+      padding: 40px 20px;
+    }
+    
+    input{
+      display: none;
+    }
+    
+    input:checked + .DarkMode__switch{
+      background-color: transparent;
+      background: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
+      .DarkMode__switch--toggle{
+        left: calc(0% + 5px);
+      }
+    }
+    
+    &__switch{
+      margin-left: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: .3s;
+      padding: 5px;
+      width: 80px;
+      height: 40px;
+      border-radius: 25px;
+      background-color: $darkMode-switch ;
+      
+      &--toggle{
+        position: absolute;
+        top: calc(0% + 5px);
+        left: calc(100% - 35px);
+        transition: .3s;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+
+.MainSection,
+.TodaysOverview{
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+ 
+  @media screen and (min-width: 576px){
+    padding: 20px;
+  }
+  
+  @media screen and (min-width: 768px){
+    padding: 30px;
+  }
+  
+  &__title{
+    color: $secondary-font-color;
+  }
+  
+  @media screen and (min-width: 576px){
+    &__title{
+      grid-column: 2 span;
+    }
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+  @media screen and (min-width: 768px){
+    &__title{
+      grid-column: 3 span;
+    }
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+  @media screen and (min-width: 992px){
+    &__title{
+      grid-column: 4 span;
+    }
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+}
+
+.MainSection{
+}
+.SocialMedia{
+  position: relative;
+  // max-width: 300px;
+  text-align: center;
+  padding: 30px;
+  background-color: $item-color;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  
+  &::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: $secondary-font-color;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }  
+  &.facebook::before{
+    background-color: $facebok-color;
+  }  
+  &.instagram::before{
+    background-image: linear-gradient(to right, $instagram-color-1 0%, $instagram-color-2 100%);
+  }  
+  &.twitter::before{    
+    background-color: $twitter-color;
+  }  
+  &.youtube::before{
+    background-color: $youtube-color;
+  }  
+  
+  &__title{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+    margin: 16px 0;
+    
+    color: $secondary-font-color;
+    font-size: 1.44rem;
+    font-weight: bold;
+  }
+  
+  &__followers{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+    &--count{
+      font-weight: bold;
+      font-size: 5rem;
+    }
+    &--title{
+      color: $secondary-font-color;
+      text-transform: uppercase;
+      letter-spacing: .5rem;
+      font-size: 1.2rem;
+    }
+  }
+  &__rage{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+    
+    padding: 12px;
+    padding-top: 20px;
+    color: $secondary-font-color;
+    
+    &.success{
+      color: $success-font-color;
+    }
+    &.danger{
+      color: $danger-font-color;
+    }
+    
+    &--count{
+      color: inherit;
+      font-size: 1.12rem;
+      font-weight: bold;
+    }
+    &--icon{
+      width: 8px;
+      // color: $secondary-font-color;
+      // text-transform: uppercase;
+      // letter-spacing: .5rem;
+      // font-size: 1.2rem;
+    }
+  }
+}
+.OverviewItem{
+  // max-width: 300px;
+  padding: 30px;
+  background-color: $item-color;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 15px;
+  row-gap: 16px;    
+  
+  &__title,
+  &__statadistics{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: end;
+  }
+  
+  &__title{
+    &--type{
+      font-size: 1.44rem;
+      font-weight: bold;
+      color: $secondary-font-color;
+    }
+  }
+  &__statadistics{
+    align-items: end;
+    font-weight: bold;
+
+    &--count{
+      font-size: 4rem;
+    }
+    &--rage{
+      display: grid;
+      justify-content: center;
+      grid-template-columns: auto auto;
+      justify-items: center;
+      align-items: center;
+      gap: 5px;
+      font-size: 1.28rem;
+    }
+    &--rage.success{
+      color: $success-font-color;
+    }
+    &--rage.danger{
+      color: $danger-font-color;
+    }
+  }
+}
