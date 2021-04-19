@@ -1,48 +1,31 @@
-import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from '@pages/Home';
-import Login from '@pages/Login';
-import Signin from '@pages/Signin';
-import NotFound from '@pages/NotFound';
-import {connect} from 'react-redux';
-import {setCategoriesStore} from './store/actions';
-import Player from '@components/containers/Player';
+import React from 'react';
+import Header from './Components/Header';
+import Section from './Components/Section';
+import data from '../socialMediaData.json'
+import SocialMedia from './Components/SocialMedia';
+import OverviewItem from './Components/OverviewItem';
 
-const App = ({dispatch, ...store}) =>{
-  
-  // const [categories, setCategories] = useState([])
-  
-  useEffect(() => {
-    
-    fetch('http://localhost:3000/initalState')
-      .then(response => response.json())
-      .then(data => {
-        dispatch(setCategoriesStore(data))
-      })
-    
-  }, [])
-
-  // console.log(categories)
-  
-  return(
-    <Router>
-      <Switch>
-        <Route exact path='/'>
-          <Home {...store} />
-        </Route>
-        <Route exact path='/Login' component={Login} />
-        <Route exact path='/Signin' component={Signin} />
-        <Route exact path="/Player/:id" component={Player} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
+const App = () => {
+  console.log(data)
+  return (
+    <>
+      <Header/>
+      <main>
+        <Section>
+          {data.socialmedias.map(socialMedia =>(
+            <SocialMedia {...socialMedia} key={socialMedia.id}/>
+          ))}
+        </Section>
+        <Section>
+          <h2 className="TodaysOverview__title">Overview - Today</h2>
+          {data.todaysOverview.map(item =>(
+            <OverviewItem {...item} key={item.id}/>
+          ))}
+        </Section>
+      </main>
+    </>
   )
 }
 
-const mapStateToProps = ({search, myList, categories}) =>({
-  search,
-  myList,
-  categories,
-})
 
-export default connect(mapStateToProps)(App);
+export default App;

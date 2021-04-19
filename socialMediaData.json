@@ -1,0 +1,102 @@
+{
+  "socialmedias":[
+    {
+      "id": "1",
+      "account": "@nathanf",
+      "accountType": "facebook",
+      "followers": 1483,
+      "newFollowers": 12,
+      "increasement": true
+    },
+    {
+      "id": "2",
+      "account": "@nathanf",
+      "accountType": "instagram",
+      "followers": 28000,
+      "newFollowers": 12,
+      "increasement": true
+    },
+    {
+      "id": "3",
+      "account": "@nathanf",
+      "accountType": "twitter",
+      "followers": 6000,
+      "newFollowers": 12,
+      "increasement": true
+    },
+    {
+      "id": "4",
+      "account": "@nathanf",
+      "accountType": "youtube",
+      "followers": 12000,
+      "newFollowers": 12,
+      "increasement": true
+    }
+  ],
+  "todaysOverview":[
+    {
+      "id": "1",
+      "type": "Page Views",
+      "count": 87,
+      "accounType": "facebook",
+      "percentage": "3%",
+      "increasement": true
+    },
+    {
+      "id": "2",
+      "type": "Likes",
+      "count": 52,
+      "accounType": "facebook",
+      "percentage": "2%",
+      "increasement": false
+    },
+    {
+      "id": "3",
+      "type": "Likes",
+      "count": 5462,
+      "accounType": "instagram",
+      "percentage": "2257%",
+      "increasement": true
+    },
+    {
+      "id": "4",
+      "type": "Page Views",
+      "count": 52000,
+      "accounType": "instagram",
+      "percentage": "1375%",
+      "increasement": true
+    },
+    {
+      "id": "5",
+      "type": "Retweets",
+      "count": 117,
+      "accounType": "twitter",
+      "percentage": "303%",
+      "increasement": true
+    },
+    {
+      "id": "6",
+      "type": "Likes",
+      "count": 507,
+      "accounType": "twitter",
+      "percentage": "553%",
+      "increasement": true
+    },
+    {
+      "id": "7",
+      "type": "Likes",
+      "count": 107,
+      "accounType": "youtube",
+      "percentage": "19%",
+      "increasement": false
+    },
+    {
+      "id": "8",
+      "type": "Total Views",
+      "count": 1407,
+      "accounType": "youtube",
+      "percentage": "12%",
+      "increasement": false
+    }
+  ]
+}

@@ -11,25 +11,7 @@ body.darkmode{
         color: $secondary-darkmode-font-color;
       }
     }
-    
-    .DarkMode{
-      color: $primary-darkmode-font-color;
-      
-      input:checked + .DarkMode__switch{
-        background-color: transparent;
-        background: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
-      }
-      
-      &__switch{
-        background-color: $darkMode-switch ;
-        
-        &--toggle{
-          background-color: $item-darkmode-color;
-        }
-      }
-    }
   }
-  
   
   .MainSection,
   .TodaysOverview{
@@ -55,17 +37,9 @@ body.darkmode{
     }
     &__rage{
       color: $secondary-darkmode-font-color;
-      
-      &.success{
-        color: $success-font-color;
-      }
-      &.danger{
-        color: $danger-font-color;
-      }
     }
   }
   .OverviewItem{
-    // max-width: 300px;
     background-color: $item-darkmode-color;
     &__title{
       &--type{
@@ -75,13 +49,6 @@ body.darkmode{
     &__statadistics{
       &--count{
         color: $primary-darkmode-font-color;
-      }
-      
-      &--rage.success{
-        color: $success-font-color;
-      }
-      &--rage.danger{
-        color: $danger-font-color;
       }
     }
   }

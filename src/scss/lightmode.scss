@@ -1,0 +1,55 @@
+body.lightmode{
+  background-color: $brand-color;
+  
+  .SocialMediaBoard-header{
+    &__main{
+      &--title{
+        color: $primary-font-color;
+      }
+      
+      &--followers{
+        color: $secondary-font-color;
+      }
+    }
+  }
+  
+  .MainSection,
+  .TodaysOverview{
+    &__title{
+      color: $secondary-font-color;
+    }
+  }
+  
+  .SocialMedia{
+    background-color: $item-color;
+    
+    &__title{
+      color: $secondary-font-color;
+    }
+    
+    &__followers{
+      &--count{
+        color: $primary-font-color;
+      }
+      &--title{
+        color: $secondary-font-color;
+      }
+    }
+    &__rage{
+      color: $secondary-font-color;
+    }
+  }
+  .OverviewItem{
+    background-color: $item-color;
+    &__title{
+      &--type{
+        color: $secondary-font-color;
+      }
+    }
+    &__statadistics{
+      &--count{
+        color: $primary-font-color;
+      }
+    }
+  }
+}
